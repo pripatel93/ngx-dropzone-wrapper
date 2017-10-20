@@ -6,7 +6,8 @@ import { Directive, Optional, OnInit, DoCheck, OnChanges, OnDestroy, Input, Outp
 import { DropzoneEvents, DropzoneConfig, DropzoneConfigInterface } from './dropzone.interfaces';
 
 @Directive({
-  selector: '[dropzone]'
+  selector: '[dropzone]',
+  exportAs: 'dropzone',
 })
 export class DropzoneDirective implements OnInit, DoCheck, OnChanges, OnDestroy {
   public dropzone: any;
@@ -151,6 +152,12 @@ export class DropzoneDirective implements OnInit, DoCheck, OnChanges, OnDestroy 
   reset() {
     this.zone.runOutsideAngular(() => {
       this.dropzone.removeAllFiles();
+    });
+  }
+
+  startUpload() {
+    this.zone.runOutsideAngular(() => {
+      this.dropzone.processQueue();
     });
   }
 }
