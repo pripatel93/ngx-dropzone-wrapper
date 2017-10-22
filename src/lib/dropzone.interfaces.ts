@@ -53,6 +53,7 @@ export interface DropzoneConfigInterface {
   fallback?: any,
   renameFile?: any,
   transformFile?: any,
+  sending?: any,
 
   withCredentials?: boolean,
 
