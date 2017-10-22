@@ -126,10 +126,16 @@ var DropzoneDirective = (function () {
             _this.dropzone.removeAllFiles();
         });
     };
-    DropzoneDirective.prototype.startUpload = function () {
+    DropzoneDirective.prototype.processQueue = function () {
         var _this = this;
         this.zone.runOutsideAngular(function () {
             _this.dropzone.processQueue();
+        });
+    };
+    DropzoneDirective.prototype.processFile = function (file) {
+        var _this = this;
+        this.zone.runOutsideAngular(function () {
+            _this.dropzone.processFile(file);
         });
     };
     DropzoneDirective.decorators = [

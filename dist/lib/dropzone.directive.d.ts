@@ -43,5 +43,6 @@ export declare class DropzoneDirective implements OnInit, DoCheck, OnChanges, On
     ngOnDestroy(): void;
     ngOnChanges(changes: SimpleChanges): void;
     reset(): void;
-    startUpload(): void;
+    processQueue(): void;
+    processFile(file: any): void;
 }
