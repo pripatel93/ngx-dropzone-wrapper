@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, Output, EventEmitter, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, Input, HostBinding, Output, EventEmitter, ViewChild, ViewEncapsulation, AfterViewInit } from '@angular/core';
 
 import { DropzoneDirective } from './dropzone.directive';
 import { DropzoneConfigInterface } from './dropzone.interfaces';
@@ -10,7 +10,7 @@ import { DropzoneConfigInterface } from './dropzone.interfaces';
   styleUrls: ['./dropzone.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class DropzoneComponent {
+export class DropzoneComponent implements AfterViewInit {
   @Input() disabled: boolean = false;
 
   @Input() config: DropzoneConfigInterface;
@@ -54,9 +54,13 @@ export class DropzoneComponent {
   @Output('totaluploadprogress') DZ_TOTALUPLOADPROGRESS = new EventEmitter<any>();
   @Output('reset'              ) DZ_RESET               = new EventEmitter<any>();
   @Output('queuecomplete'      ) DZ_QUEUECOMPLETE       = new EventEmitter<any>();
+  @Output() init = new EventEmitter<any>();
 
   constructor() {}
 
+  ngAfterViewInit() {
+    this.init.emit(this.directiveRef);
+  }
   getPlaceholder() {
     return 'url(' + encodeURI(this.placeholder) + ')';
   }

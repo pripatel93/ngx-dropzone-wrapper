@@ -1,7 +1,7 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, AfterViewInit } from '@angular/core';
 import { DropzoneDirective } from './dropzone.directive';
 import { DropzoneConfigInterface } from './dropzone.interfaces';
-export declare class DropzoneComponent {
+export declare class DropzoneComponent implements AfterViewInit {
     disabled: boolean;
     config: DropzoneConfigInterface;
     message: string;
@@ -35,6 +35,8 @@ export declare class DropzoneComponent {
     DZ_TOTALUPLOADPROGRESS: EventEmitter<any>;
     DZ_RESET: EventEmitter<any>;
     DZ_QUEUECOMPLETE: EventEmitter<any>;
+    init: EventEmitter<any>;
     constructor();
+    ngAfterViewInit(): void;
     getPlaceholder(): string;
 }

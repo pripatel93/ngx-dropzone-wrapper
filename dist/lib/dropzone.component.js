@@ -35,7 +35,11 @@ var DropzoneComponent = (function () {
         this.DZ_TOTALUPLOADPROGRESS = new core_1.EventEmitter();
         this.DZ_RESET = new core_1.EventEmitter();
         this.DZ_QUEUECOMPLETE = new core_1.EventEmitter();
+        this.init = new core_1.EventEmitter();
     }
+    DropzoneComponent.prototype.ngAfterViewInit = function () {
+        this.init.emit(this.directiveRef);
+    };
     DropzoneComponent.prototype.getPlaceholder = function () {
         return 'url(' + encodeURI(this.placeholder) + ')';
     };
@@ -84,6 +88,7 @@ var DropzoneComponent = (function () {
         'DZ_TOTALUPLOADPROGRESS': [{ type: core_1.Output, args: ['totaluploadprogress',] },],
         'DZ_RESET': [{ type: core_1.Output, args: ['reset',] },],
         'DZ_QUEUECOMPLETE': [{ type: core_1.Output, args: ['queuecomplete',] },],
+        'init': [{ type: core_1.Output },],
     };
     return DropzoneComponent;
 }());
