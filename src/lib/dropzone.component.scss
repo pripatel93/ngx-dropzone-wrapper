@@ -178,9 +178,9 @@ dropzone {
           height: 100%;
 
           .dz-text {
-            margin-top: 50%;
+            // margin-top: 50%;
 
-            transform: translateY(-50%);
+            // transform: translateY(-50%);
           }
         }
 
@@ -189,6 +189,10 @@ dropzone {
           height: 100%;
           margin: 8px;
 
+          .dz-remove {
+            padding-top: 100px;
+          }
+          
           .dz-image {
             width: 100%;
             height: 100%;
