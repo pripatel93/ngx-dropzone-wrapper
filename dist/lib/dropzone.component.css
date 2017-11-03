@@ -512,7 +512,7 @@ dropzone.dz-wrapper {
           font-weight: bold;
           background: rgba(255, 255, 255, 0.5);
           transform: translateY(-50%);
-          transition: filter 250ms ease-in-out, opacity 250ms ease-in-out, border-color 250ms ease-in-out; }
+          transition: filter 250ms ease-in-out, opacity 250ms ease-in-out, border-color 250ms ease-in-out; }
         dropzone.dz-wrapper > .dropzone .dz-message.dz-placeholder:hover:not(.disabled) {
           border-color: #aaa; }
           dropzone.dz-wrapper > .dropzone .dz-message.dz-placeholder:hover:not(.disabled) .dz-text {
@@ -529,16 +529,18 @@ dropzone.dz-wrapper {
       border-radius: 4px; }
       dropzone.dz-wrapper > .dropzone .dz-preview .dz-progress .dz-upload {
         background: #666; }
-    dropzone.dz-wrapper > .dropzone .dz-preview .dz-filename span {
-      display: block;
-      overflow: hidden;
-      width: 100%;
-      max-width: 100%;
-      text-overflow: ellipsis; }
-      dropzone.dz-wrapper > .dropzone .dz-preview .dz-filename span:hover {
-        overflow: visible;
-        white-space: normal;
-        word-wrap: break-word; }
+    dropzone.dz-wrapper > .dropzone .dz-preview .dz-filename {
+      padding-top: 1em; }
+      dropzone.dz-wrapper > .dropzone .dz-preview .dz-filename span {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        text-overflow: ellipsis; }
+        dropzone.dz-wrapper > .dropzone .dz-preview .dz-filename span:hover {
+          overflow: visible;
+          white-space: normal;
+          word-wrap: break-word; }
     dropzone.dz-wrapper > .dropzone.dz-single.dz-started .dz-message {
       display: none; }
     dropzone.dz-wrapper > .dropzone.dz-single .dz-message {

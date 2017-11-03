@@ -149,6 +149,7 @@ dropzone {
         }
 
         .dz-filename {
+          padding-top: 1em;
           span {
             display: block;
             overflow: hidden;
@@ -192,7 +193,7 @@ dropzone {
           .dz-remove {
             padding-top: 100px;
           }
-          
+
           .dz-image {
             width: 100%;
             height: 100%;
