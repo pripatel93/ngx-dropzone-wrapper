@@ -521,7 +521,7 @@ dropzone.dz-wrapper {
             -webkit-filter: blur(8px);
             filter: blur(8px); }
     dropzone.dz-wrapper > .dropzone .dz-preview .dz-details {
-      padding: 24px; }
+      padding: 2em 1em 0em 1em; }
     dropzone.dz-wrapper > .dropzone .dz-preview .dz-progress {
       width: 80%;
       margin-left: -40%;
